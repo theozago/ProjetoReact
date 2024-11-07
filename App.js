@@ -5,7 +5,7 @@ import { Card } from 'react-native-paper';
 
 // or any files within the Snack
 import AssetExample from './components/AssetExample';
-
+//teste
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
