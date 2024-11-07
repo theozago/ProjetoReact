@@ -1,44 +1,21 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React from 'react';
+import { View, Text, Button } from 'react-native';
 
-const LoginScreen = ({ navigation }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = async () => {
-    try {
-      const storedUsername = await AsyncStorage.getItem('user');
-      const storedPassword = await AsyncStorage.getItem('password');
-      
-      if (username === storedUsername && password === storedPassword) {
-        navigation.navigate('Sucesso');
-      } else {
-        Alert.alert('Erro', 'Usuário ou senha incorretos');
-      }
-    } catch (error) {
-      Alert.alert('Erro', 'Falha ao acessar os dados de login');
-    }
-  };
-
+const InicioScreen = ({ navigation }) => {
   return (
-    <View style={{ padding: 20 }}>
-      <Text>Usuário:</Text>
-      <TextInput
-        value={username}
-        onChangeText={setUsername}
-        style={{ borderWidth: 1, marginBottom: 10 }}
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{ fontSize: 32, fontWeight: 'bold', marginBottom: 20 }}>NBA</Text>
+      <Button
+        title="Ver Times da NBA"
+        onPress={() => navigation.navigate('TimesNBA')}
       />
-      <Text>Senha:</Text>
-      <TextInput
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-        style={{ borderWidth: 1, marginBottom: 10 }}
+      <View style={{ height: 20 }} /> {/* Espaçamento entre os botões */}
+      <Button
+        title="Criar Jogador"
+        onPress={() => navigation.navigate('CriarJogador')}
       />
-      <Button title="Login" onPress={handleLogin} />
     </View>
   );
 };
 
-export default LoginScreen;
+export default InicioScreen;
