@@ -2,7 +2,14 @@ import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 
 const teams = [
-  { id: '1', name: 'Boston Celtics', logo: '' },
+  {
+    id: '1',
+    name: 'Boston Celtics',
+    logo: 'https://link-da-logo-celtics.com/logo.png',
+    cidade: 'Boston',
+    titulos: 17,
+    fundacao: 1946,
+  },
   { id: '2', name: 'Brooklyn Nets', logo: '' },
   { id: '3', name: 'New York Knicks', logo: '' },
   { id: '4', name: 'Philadelphia 76ers', logo: '' },
@@ -35,19 +42,28 @@ const teams = [
 ];
 
 const TimesNBA = ({ navigation }) => {
-  const renderItem = ({ item }) => (
-    <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }}>
-      <Image source={{ uri: item.logo }} style={{ width: 50, height: 50, marginRight: 10 }} />
-      <Text style={{ fontSize: 18 }}>{item.name}</Text>
-    </TouchableOpacity>
-  );
-
   return (
     <View style={{ flex: 1, padding: 10 }}>
       <FlatList
         data={teams}
         keyExtractor={(item) => item.id}
-        renderItem={renderItem}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }}
+            onPress={() =>
+              navigation.navigate('TeamDetails', {
+                teamName: item.name,
+                teamLogo: item.logo,
+                cidade: item.cidade,
+                titulos: item.titulos,
+                fundacao: item.fundacao,
+              })
+            }
+          >
+            <Image source={{ uri: item.logo }} style={{ width: 50, height: 50, marginRight: 10 }} />
+            <Text style={{ fontSize: 18 }}>{item.name}</Text>
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
