@@ -14,16 +14,19 @@ const InicioScreen = ({ navigation }) => {
       <Text style={{ fontSize: 32, fontWeight: 'bold', marginBottom: 20 }}>NBA</Text>
       <Button
         title="Ver Times da NBA"
+        color ="black"
         onPress={() => navigation.navigate('TimesNBA')}
       />
       <View style={{ height: 20 }} />
       <Button
         title="Criar Jogador"
+        color ="black"
         onPress={() => navigation.navigate('CriarJogador')}
       />
       <View style={{ height: 20 }} />
       <Button 
         title="Meu Time"
+        color ="black"
         onPress={() => navigation.navigate('MeuTime')} />
     </View>
     

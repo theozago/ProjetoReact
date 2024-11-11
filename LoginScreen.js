@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
         style={{ borderWidth: 1, marginBottom: 10 }}
       />
-      <Button title="Login" onPress={handleLogin} />
+      <Button title="Login" color="black" onPress={handleLogin} />
     </View>
   );
 };

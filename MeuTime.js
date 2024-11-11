@@ -38,7 +38,7 @@ const MeuTime = ({ navigation }) => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 }}>
       <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Image
-          source={{ uri: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png' }}
+          source={{ uri: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png' }}
           style={{ width: 200, height: 200 }}
         />
       </View>

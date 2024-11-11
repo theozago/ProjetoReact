@@ -13,11 +13,13 @@ const HomeScreen = ({ navigation }) => {
       <Text style={{ fontSize: 24, marginBottom: 20 }}>Aplicativo da NBA</Text>
       <Button
         title="Cadastrar"
+        color="black"
         onPress={() => navigation.navigate('Cadastro')}
       />
       <View style={{ height: 20 }} />
       <Button
         title="Login"
+        color="black"
         onPress={() => navigation.navigate('Login')}
       />
     </View>

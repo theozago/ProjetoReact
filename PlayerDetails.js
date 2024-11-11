@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Alert } from 'react-native';
+import { View, Text, Button, Alert,Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const PlayerDetails = ({ route, navigation }) => {
@@ -24,6 +24,13 @@ const PlayerDetails = ({ route, navigation }) => {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 }}>
+    <View style={{ alignItems: 'center', marginBottom: 20 }}>
+        <Image
+          source={{ uri: 'https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' }}
+          style={{ width: 200, height: 200 }}
+        />
+      </View>
+      
       <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{player.name}</Text>
       <Text style={{ fontSize: 18, marginVertical: 10 }}>Altura: {player.height} cm</Text>
       <Text style={{ fontSize: 18, marginVertical: 10 }}>Envergadura: {player.wingspan} cm</Text>

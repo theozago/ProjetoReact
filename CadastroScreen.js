@@ -42,7 +42,7 @@ const CadastroScreen = ({ navigation }) => {
         secureTextEntry
         style={{ borderWidth: 1, marginBottom: 10 }}
       />
-      <Button title="Cadastrar" onPress={handleCadastro} />
+      <Button title="Cadastrar" color="black" onPress={handleCadastro} />
     </View>
   );
 };

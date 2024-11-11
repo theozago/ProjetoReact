@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, Alert, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Picker } from '@react-native-picker/picker';
+import { Audio } from 'expo-av';
 
 const CriarJogador = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -11,16 +11,16 @@ const CriarJogador = ({ navigation }) => {
   const [jerseyNumber, setJerseyNumber] = useState('');
   const [position, setPosition] = useState('point guard');
 
+  const playConfirmationSound = async () => {
+    const { sound } = await Audio.Sound.createAsync(
+      require('./assets/claps-44774.mp3')
+    );
+    await sound.playAsync();
+  };
+
   const handleCreatePlayer = async () => {
     if (name && height && wingspan && weight && jerseyNumber && position) {
-      const player = {
-        name,
-        height,
-        wingspan,
-        weight,
-        jerseyNumber,
-        position,
-      };
+      const player = { name, height, wingspan, weight, jerseyNumber, position };
 
       try {
         const storedPlayers = await AsyncStorage.getItem('players');
@@ -28,6 +28,7 @@ const CriarJogador = ({ navigation }) => {
         players.push(player);
         await AsyncStorage.setItem('players', JSON.stringify(players));
 
+        await playConfirmationSound();
         Alert.alert('Sucesso', 'Jogador criado com sucesso!');
         navigation.navigate('Inicio');
 
@@ -47,70 +48,135 @@ const CriarJogador = ({ navigation }) => {
   };
 
   return (
-    <View style={{ padding: 20 }}>
-    <View style={{ alignItems: 'center', marginBottom: 20 }}>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
         <Image
           source={{ uri: 'https://lnb.com.br/wp-content/uploads/2024/06/Diego-Zimmerman.png' }}
-          style={{ width: 200, height: 200 }}
+          style={styles.image}
         />
       </View>
-      <Text>Nome:</Text>
+
+      <Text style={styles.label}>Nome:</Text>
       <TextInput
         value={name}
         onChangeText={setName}
-        style={{ borderWidth: 1, marginBottom: 10 }}
+        style={styles.input}
       />
 
-      <Text>Altura (cm):</Text>
+      <Text style={styles.label}>Altura (cm):</Text>
       <TextInput
         value={height}
         onChangeText={setHeight}
         keyboardType="numeric"
-        style={{ borderWidth: 1, marginBottom: 10 }}
+        style={styles.input}
       />
 
-      <Text>Envergadura (cm):</Text>
+      <Text style={styles.label}>Envergadura (cm):</Text>
       <TextInput
         value={wingspan}
         onChangeText={setWingspan}
         keyboardType="numeric"
-        style={{ borderWidth: 1, marginBottom: 10 }}
+        style={styles.input}
       />
 
-      <Text>Peso (kg):</Text>
+      <Text style={styles.label}>Peso (kg):</Text>
       <TextInput
         value={weight}
         onChangeText={setWeight}
         keyboardType="numeric"
-        style={{ borderWidth: 1, marginBottom: 10 }}
+        style={styles.input}
       />
 
-      <Text>Número da Camiseta:</Text>
+      <Text style={styles.label}>Número da Camiseta:</Text>
       <TextInput
         value={jerseyNumber}
         onChangeText={setJerseyNumber}
         keyboardType="numeric"
-        style={{ borderWidth: 1, marginBottom: 10 }}
+        style={styles.input}
       />
 
-      <Text>Posição:</Text>
-      <Picker
-        selectedValue={position}
-        style={{ height: 50, marginBottom: 20 }}
-        onValueChange={(itemValue) => setPosition(itemValue)}
-      >
-        <Picker.Item label="Armador" value="point guard" />
-        <Picker.Item label="Ala-Armador" value="shooting guard" />
-        <Picker.Item label="Ala" value="small forward" />
-        <Picker.Item label="Ala-Pivô" value="power forward" />
-        <Picker.Item label="Pivô" value="center" />
-      </Picker>
+      
+      <Text style={styles.label}>Posição:</Text>
+      <View style={styles.radioContainer}>
+        {['Armador', 'Ala-Armador', 'Ala', 'Ala-Pivô', 'Pivô'].map((pos, index) => (
+          <TouchableOpacity 
+            key={index} 
+            style={styles.radioOption} 
+            onPress={() => setPosition(pos.toLowerCase())}
+          >
+            <View style={[
+              styles.radioCircle, 
+              position === pos.toLowerCase() && styles.radioSelected
+            ]} />
+            <Text style={styles.radioLabel}>{pos}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
 
-      <TouchableOpacity onPress={handleCreatePlayer} style={{ backgroundColor: 'blue', padding: 10, alignItems: 'center' }}>
-        <Text style={{ color: 'white' }}>Confirmar Criação</Text>
+      <TouchableOpacity onPress={handleCreatePlayer} style={styles.button}>
+        <Text style={styles.buttonText}>Confirmar Criação</Text>
       </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 15,
+  },
+  imageContainer: {
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  image: {
+    width: 150,
+    height: 150,
+  },
+  label: {
+    marginBottom: 4,
+    fontSize: 14,
+  },
+  input: {
+    borderWidth: 1,
+    marginBottom: 10,
+    padding: 6,
+    borderRadius: 5,
+    fontSize: 14,
+  },
+  radioContainer: {
+    flexDirection: 'column',
+    marginBottom: 20,
+  },
+  radioOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  radioCircle: {
+    height: 16,
+    width: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'black',
+    marginRight: 8,
+  },
+  radioSelected: {
+    backgroundColor: 'black',
+  },
+  radioLabel: {
+    fontSize: 14,
+  },
+  button: {
+    backgroundColor: 'black',
+    padding: 12,
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 14, 
+  },
+});
 
 export default CriarJogador;
