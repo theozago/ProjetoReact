@@ -3,7 +3,7 @@ import { View, Button, Text, Image } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={{ padding: 20, alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+    <View style={{ padding: 20, alignItems: 'center', justifyContent: 'center', flex: 1, backgroundColor: 'lightblue' }}>
       
       <Image
         source={{ uri: 'https://lncimg.lance.com.br/uploads/2023/12/NBA-logo.png' }}

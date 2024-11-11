@@ -48,7 +48,7 @@ const CriarJogador = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container,{backgroundColor: 'lightblue'}}>
       <View style={styles.imageContainer}>
         <Image
           source={{ uri: 'https://lnb.com.br/wp-content/uploads/2024/06/Diego-Zimmerman.png' }}

@@ -4,7 +4,7 @@ import { View, Text, Button, Image } from 'react-native';
 const InicioScreen = ({ navigation }) => {
   return (
     
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'lightblue' }}>
     <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Image
           source={{ uri: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629630.png' }}

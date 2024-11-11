@@ -22,7 +22,7 @@ const CadastroScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, padding: 20 }}>
+    <View style={{ flex: 1, padding: 20, backgroundColor: 'lightblue' }}>
       <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Image
           source={{ uri: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png' }}

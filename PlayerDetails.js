@@ -23,7 +23,7 @@ const PlayerDetails = ({ route, navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20, backgroundColor: 'lightblue' }}>
     <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Image
           source={{ uri: 'https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg' }}

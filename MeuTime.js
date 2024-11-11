@@ -35,7 +35,7 @@ const MeuTime = ({ navigation }) => {
   );
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20, backgroundColor: 'lightblue' }}>
       <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Image
           source={{ uri: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png' }}

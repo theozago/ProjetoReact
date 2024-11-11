@@ -22,7 +22,7 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, padding: 20 }}>
+    <View style={{ flex: 1, padding: 20, backgroundColor: 'lightblue' }}>
       <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Image
           source={{ uri: 'https://cdn.nba.com/headshots/nba/latest/1040x760/406.png' }}

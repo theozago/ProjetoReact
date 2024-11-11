@@ -37,7 +37,7 @@ const teams = [
 
 const TimesNBA = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, padding: 10 }}>
+    <View style={{ flex: 1, padding: 10, backgroundColor: 'lightblue' }}>
       <FlatList
         data={teams}
         keyExtractor={(item) => item.id}
