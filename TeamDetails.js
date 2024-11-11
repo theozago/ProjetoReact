@@ -11,7 +11,7 @@ const TeamDetails = ({ route }) => {
       <Text style={{ fontSize: 18 }}>Cidade: {cidade}</Text>
       <Text style={{ fontSize: 18 }}>Títulos: {titulos}</Text>
       <Text style={{ fontSize: 18 }}>Ano de Fundação: {fundacao}</Text>
-      {/* Adicione outros detalhes conforme necessário */}
+      {}
     </View>
   );
 };

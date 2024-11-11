@@ -9,7 +9,7 @@ const InicioScreen = ({ navigation }) => {
         title="Ver Times da NBA"
         onPress={() => navigation.navigate('TimesNBA')}
       />
-      <View style={{ height: 20 }} /> {/* Espaçamento entre os botões */}
+      <View style={{ height: 20 }} />
       <Button
         title="Criar Jogador"
         onPress={() => navigation.navigate('CriarJogador')}

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 
 const teams = [
-    { id: '1', name: 'Boston Celtics', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Boston_Celtics.svg/1200px-Boston_Celtics.svg.png', cidade: 'Boston', titulos: 18, fundacao: 1946 },
+  { id: '1', name: 'Boston Celtics', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Boston_Celtics.svg/1200px-Boston_Celtics.svg.png', cidade: 'Boston', titulos: 18, fundacao: 1946 },
   { id: '2', name: 'Brooklyn Nets', logo: '', cidade: 'Brooklyn', titulos: 0, fundacao: 1967 },
   { id: '3', name: 'New York Knicks', logo: '', cidade: 'New York', titulos: 2, fundacao: 1946 },
   { id: '4', name: 'Philadelphia 76ers', logo: '', cidade: 'Philadelphia', titulos: 3, fundacao: 1946 },
@@ -33,6 +33,7 @@ const teams = [
   { id: '28', name: 'Memphis Grizzlies', logo: '', cidade: 'Memphis', titulos: 0, fundacao: 1995 },
   { id: '29', name: 'New Orleans Pelicans', logo: '', cidade: 'New Orleans', titulos: 0, fundacao: 2002 },
   { id: '30', name: 'San Antonio Spurs', logo: '', cidade: 'San Antonio', titulos: 5, fundacao: 1967 },
+
 ];
 
 const TimesNBA = ({ navigation }) => {

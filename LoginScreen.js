@@ -12,7 +12,7 @@ const LoginScreen = ({ navigation }) => {
       const storedPassword = await AsyncStorage.getItem('password');
       
       if (username === storedUsername && password === storedPassword) {
-        navigation.navigate('Sucesso');
+        navigation.navigate('Inicio');
       } else {
         Alert.alert('Erro', 'Usuário ou senha incorretos');
       }
