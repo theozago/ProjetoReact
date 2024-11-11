@@ -9,6 +9,8 @@ import InicioScreen from './InicioScreen';
 import TimesNBA from './TimesNBA';
 import CriarJogador from './CriarJogador';
 import TeamDetails from './TeamDetails';
+import MeuTime from './MeuTime';
+import PlayerDetails from './PlayerDetails';
 
 
 const Stack = createStackNavigator();
@@ -24,6 +26,8 @@ export default function App() {
         <Stack.Screen name="TimesNBA" component={TimesNBA} />
         <Stack.Screen name="CriarJogador" component={CriarJogador} />
         <Stack.Screen name="TeamDetails" component={TeamDetails} />
+        <Stack.Screen name="MeuTime" component={MeuTime} />
+        <Stack.Screen name="PlayerDetails" component={PlayerDetails} />
         
       </Stack.Navigator>
     </NavigationContainer>

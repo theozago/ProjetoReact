@@ -14,7 +14,12 @@ const InicioScreen = ({ navigation }) => {
         title="Criar Jogador"
         onPress={() => navigation.navigate('CriarJogador')}
       />
+      <View style={{ height: 20 }} />
+      <Button 
+        title="Meu Time"
+        onPress={() => navigation.navigate('MeuTime')} />
     </View>
+    
   );
 };
 

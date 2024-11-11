@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Alert, Picker, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Picker } from '@react-native-picker/picker'; // Importação do Picker
 
 const CriarJogador = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -22,18 +23,14 @@ const CriarJogador = ({ navigation }) => {
       };
 
       try {
-        
         const storedPlayers = await AsyncStorage.getItem('players');
         const players = storedPlayers ? JSON.parse(storedPlayers) : [];
         players.push(player);
         await AsyncStorage.setItem('players', JSON.stringify(players));
 
         Alert.alert('Sucesso', 'Jogador criado com sucesso!');
-
-        
         navigation.navigate('Inicio');
 
-        
         setName('');
         setHeight('');
         setWingspan('');
