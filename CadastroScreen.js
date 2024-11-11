@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert } from 'react-native';
+import { View, Text, TextInput, Button, Alert, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CadastroScreen = ({ navigation }) => {
@@ -22,7 +22,13 @@ const CadastroScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={{ flex: 1, padding: 20 }}>
+      <View style={{ alignItems: 'center', marginBottom: 20 }}>
+        <Image
+          source={{ uri: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png' }}
+          style={{ width: 200, height: 200 }}
+        />
+      </View>
       <Text>Usuário:</Text>
       <TextInput
         value={username}

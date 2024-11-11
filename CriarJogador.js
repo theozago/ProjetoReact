@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Picker } from '@react-native-picker/picker'; // Importação do Picker
+import { Picker } from '@react-native-picker/picker';
 
 const CriarJogador = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -48,6 +48,12 @@ const CriarJogador = ({ navigation }) => {
 
   return (
     <View style={{ padding: 20 }}>
+    <View style={{ alignItems: 'center', marginBottom: 20 }}>
+        <Image
+          source={{ uri: 'https://lnb.com.br/wp-content/uploads/2024/06/Diego-Zimmerman.png' }}
+          style={{ width: 200, height: 200 }}
+        />
+      </View>
       <Text>Nome:</Text>
       <TextInput
         value={name}

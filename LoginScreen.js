@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert } from 'react-native';
+import { View, Text, TextInput, Button, Alert, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginScreen = ({ navigation }) => {
@@ -22,7 +22,13 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={{ flex: 1, padding: 20 }}>
+      <View style={{ alignItems: 'center', marginBottom: 20 }}>
+        <Image
+          source={{ uri: 'https://cdn.nba.com/headshots/nba/latest/1040x760/406.png' }}
+          style={{ width: 200, height: 200 }}
+        />
+      </View>
       <Text>Usuário:</Text>
       <TextInput
         value={username}
