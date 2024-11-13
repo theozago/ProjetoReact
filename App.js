@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// Importa as telas do aplicativo
 import HomeScreen from './HomeScreen';
 import CadastroScreen from './CadastroScreen';
 import LoginScreen from './LoginScreen';

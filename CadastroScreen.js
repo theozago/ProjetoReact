@@ -6,6 +6,7 @@ const CadastroScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  // Armazena o usuário e a senha no AsyncStorage
   const handleCadastro = async () => {
     if (username && password) {
       try {
