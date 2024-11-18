@@ -16,3 +16,15 @@ O objetivo principal do app é criar uma plataforma onde os usuários possam nav
 
 -Visualização de detalhes dos jogadores e times.
 
+*Funções utilizadas*
+
+-React Native: Descrever que a base do app é desenvolvida em React Native.
+
+-Expo: Para testes e desenvolvimento rápido em múltiplas plataformas.
+
+-AsyncStorage: Utilizado para armazenamento local de dados de cadastro e preferências do usuário.
+
+-React Navigation: Para navegação entre telas.
+
+-Expo-av: Para reprodução de som na confirmação de criação de jogador.
+
