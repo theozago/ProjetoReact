@@ -39,3 +39,7 @@ Durante o desenvolvimento, o primeiro passo foi configurar o ambiente e instalar
 *Dificuldades*
 
 Testamos as funcionalidades de cadastro, login, criação e exclusão de jogadores, além da navegação entre telas. Enfrentamos um problema de sobreposição do Picker com o botão de criação, que foi resolvido ao substituir o Picker por botões de opção.
+
+*Conclusão*
+
+Após passar por todos esses passos, dificuldades e aprendizados, no final o aplicativo saiu como imaginado, desde as telas mais simples de cadastro e login, até as telas mais avançadas de criação de jogadores.
