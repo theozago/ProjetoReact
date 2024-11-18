@@ -34,5 +34,8 @@ O aplicativo oferece um sistema de cadastro e login onde os dados são armazenad
 
 *Desenvolvimento*
 
-Durante o desenvolvimento, o primeiro passo foi configurar o ambiente e instalar as dependências. Em seguida, foram criadas as telas de cadastro e login usando AsyncStorage para armazenar dados localmente. A tela de lista de times foi implementada para permitir que o usuário veja os times da NBA. A criação de jogadores foi configurada com inputs para atributos específicos, e um som de confirmação foi adicionado ao finalizar a criação. Por fim, as telas de detalhes e gerenciamento de jogadores foram desenvolvidas, permitindo visualizar e excluir jogadores.7
+Durante o desenvolvimento, o primeiro passo foi configurar o ambiente e instalar as dependências. Em seguida, foram criadas as telas de cadastro e login usando AsyncStorage para armazenar dados localmente. A tela de lista de times foi implementada para permitir que o usuário veja os times da NBA. A criação de jogadores foi configurada com inputs para atributos específicos, e um som de confirmação foi adicionado ao finalizar a criação. Por fim, as telas de detalhes e gerenciamento de jogadores foram desenvolvidas, permitindo visualizar e excluir jogadores.
 
+*Dificuldades*
+
+Testamos as funcionalidades de cadastro, login, criação e exclusão de jogadores, além da navegação entre telas. Enfrentamos um problema de sobreposição do Picker com o botão de criação, que foi resolvido ao substituir o Picker por botões de opção.
