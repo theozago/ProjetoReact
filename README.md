@@ -28,3 +28,6 @@ O objetivo principal do app é criar uma plataforma onde os usuários possam nav
 
 -Expo-av: Para reprodução de som na confirmação de criação de jogador.
 
+*Funcionalidades*
+
+O aplicativo oferece um sistema de cadastro e login onde os dados são armazenados localmente usando AsyncStorage. Após o login, o usuário pode navegar para várias telas, incluindo uma lista de times da NBA e uma tela para criação de jogadores personalizados. Cada jogador pode ser visualizado em detalhes e excluído da lista se desejado.
